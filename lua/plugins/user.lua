@@ -1,22 +1,50 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- PLEASE REMOVE THE EXAMPLES YOU HAVE NO INTEREST IN BEFORE ENABLING THIS FILE
 -- Here are some examples:
 
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
+  -- overrides
   {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+    "kawre/leetcode.nvim",
+    opts = {
+      theme = {
+        ["normal"] = { fg = "#ADB0BB" },
+      },
+    },
   },
-
-  -- == Examples of Overriding Plugins ==
+  {
+    "akinsho/toggleterm.nvim",
+    opts = {
+      auto_scroll = false,
+    },
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    ft = function()
+      local plugin = require("lazy.core.config").spec.plugins["markview.nvim"]
+      local opts = require("lazy.core.plugin").values(plugin, "opts", false)
+      return opts.preview.filetypes or { "markdown", "quarto", "rmd" }
+    end,
+    opts = {
+      preview = {
+        ignore_buftypes = {},
+        filetypes = {
+          "md",
+          "markdown",
+          "norg",
+          "rmd",
+          "org",
+          "vimwiki",
+          "typst",
+          "latex",
+          "quarto",
+          "Avante",
+          "codecompanion",
+        },
+      },
+    },
+  },
 
   -- customize dashboard options
   {
