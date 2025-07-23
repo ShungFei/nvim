@@ -95,6 +95,20 @@ return {
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+
+        ["s"] = { "<Plug>(leap)", desc = "Leap in window" },
+        ["S"] = { "<Plug>(leap-from-window)", desc = "Leap from window" },
+        ["gs"] = false,
+      },
+      x = {
+        ["s"] = { "<Plug>(leap)", desc = "Leap in window" },
+        ["S"] = false,
+        ["gs"] = false,
+      },
+      o = {
+        ["s"] = { "<Plug>(leap)", desc = "Leap in window" },
+        ["S"] = false,
+        ["gs"] = false,
       },
       t = {
         ["<esc>"] = { [[<C-\><C-n>]] },
