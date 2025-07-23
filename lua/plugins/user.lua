@@ -12,6 +12,14 @@ return {
     },
   },
   {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      filetypes = {
+        markdown = true,
+      },
+    },
+  },
+  {
     "OXY2DEV/markview.nvim",
     ft = function()
       local plugin = require("lazy.core.config").spec.plugins["markview.nvim"]
