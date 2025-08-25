@@ -9,6 +9,18 @@ return {
   ---@type AstroCoreOpts
   opts = {
     autocmds = {
+      ignore_kitty_margins = {
+        {
+          event = "VimEnter",
+          pattern = "*",
+          command = "silent! !kitten @ --to=$KITTEN_LISTEN_ON set-spacing margin=0",
+        },
+        {
+          event = "ExitPre",
+          pattern = "*",
+          command = "silent! !kitten @ --to=$KITTEN_LISTEN_ON set-spacing margin=default",
+        },
+      },
       attach_markview_to_gdscript_native_symbols = {
         {
           event = "FileType",
