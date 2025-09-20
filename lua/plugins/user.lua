@@ -49,11 +49,19 @@ return {
   -- customize dashboard options
   {
     "folke/snacks.nvim",
-    opts = {
-      dashboard = {
+    opts = function(_, opts)
+      local get_icon = require("astroui").get_icon
+      opts.dashboard = {
         width = 69,
         pane_gap = 16,
         preset = {
+          keys = {
+            { key = "n", action = "<Leader>n", icon = get_icon("FileNew", 0, true), desc = "New File  " },
+            { key = "f", action = "<Leader>ff", icon = get_icon("Search", 0, true), desc = "Find File  " },
+            { key = "w", action = "<Leader>fw", icon = get_icon("WordFile", 0, true), desc = "Find Word  " },
+            { key = "'", action = "<Leader>f'", icon = get_icon("Bookmarks", 0, true), desc = "Bookmarks  " },
+            { key = "s", action = "<Leader>Sl", icon = get_icon("Refresh", 0, true), desc = "Last Session  " },
+          },
           header = table.concat({
             [[                                                                     ]],
             [[                                                                   ]],
@@ -72,8 +80,28 @@ return {
         sections = {
           { section = "header" },
           { section = "keys", gap = 1, padding = 1 },
-          { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-          { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 2 },
+          {
+            pane = 1,
+            icon = " ",
+            title = "Recent Files",
+            section = "recent_files",
+            indent = 2,
+            padding = 1,
+            limit = 3,
+            key = "o",
+            action = function() require("snacks").dashboard.pick "oldfiles" end,
+          },
+          {
+            pane = 1,
+            icon = " ",
+            title = "Projects",
+            section = "projects",
+            indent = 2,
+            padding = 2,
+            limit = 3,
+            key = "p",
+            action = function() require("snacks").dashboard.pick "projects" end,
+          },
           function()
             local in_git = require("snacks").git.get_root() ~= nil
             return {
@@ -138,8 +166,8 @@ return {
           end,
           { section = "startup" },
         },
-      },
-    },
+      }
+    end,
   },
 
   -- You can disable default plugins as follows:
