@@ -159,6 +159,9 @@ return {
           { section = "startup" },
         },
       }
+      opts.image = {
+        doc = { enabled = true, inline = true },
+      }
     end,
   },
 
