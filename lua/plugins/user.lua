@@ -6,6 +6,12 @@
 return {
   -- overrides
   {
+    "QuickGD/quickgd.nvim",
+    opts = {
+      godot_path = "/usr/bin/godot",
+    },
+  },
+  {
     "kawre/leetcode.nvim",
     opts = {
       theme = {
