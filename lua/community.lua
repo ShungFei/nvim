@@ -6,8 +6,6 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion.codeium-vim" },
-  { import = "astrocommunity.completion.copilot-vim" },
-  { import = "astrocommunity.editing-support.codecompanion-nvim" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.game.leetcode-nvim" },
   { import = "astrocommunity.markdown-and-latex.markview-nvim" },
