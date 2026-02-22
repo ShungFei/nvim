@@ -12,14 +12,6 @@ return {
     },
   },
   {
-    "kawre/leetcode.nvim",
-    opts = {
-      theme = {
-        ["normal"] = { fg = "#ADB0BB" },
-      },
-    },
-  },
-  {
     "akinsho/toggleterm.nvim",
     opts = {
       auto_scroll = false,
