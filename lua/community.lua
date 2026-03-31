@@ -7,7 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.ai.opencode-nvim" },
-  { import = "astrocommunity.file-explorer.oil-nvim" },
+  { import = "astrocommunity.file-explorer.yazi-nvim" },
   { import = "astrocommunity.markdown-and-latex.markview-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
